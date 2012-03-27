@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.2'
+gem 'rails', '3.2.1'
 gem 'mysql2'
 gem 'devise'
 gem 'haml-rails'
@@ -9,18 +9,17 @@ gem "instedd-rails", '0.0.15'
 gem "breadcrumbs_on_rails"
 gem "tire"
 gem "valium"
-gem "jasmine"
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.5'
-  gem 'coffee-rails', '~> 3.2.2'
+  gem 'sass-rails',   '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer'
 
-  gem 'uglifier', '>= 1.2.3'
+  gem 'uglifier', '>= 1.0.3'
 end
 
 gem 'jquery-rails'
@@ -32,6 +31,9 @@ group :test, :development do
   gem 'machinist', '1.0.6'
   gem 'capistrano'
   gem 'rvm'
+  gem 'jasmine'
+  gem 'guard'
+  gem 'guard-coffeescript'
 end
 
 group :test do
