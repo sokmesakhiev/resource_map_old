@@ -5,9 +5,11 @@ syntax: glob
 *.orig
 *.pid
 *.*~
+*.swp
 .DS_Store
+.bundle
 tmp/*
 public/assets
-.bundle
 spec/reports
-*.swp
+public/javascripts/compiled
+spec/javascripts/compiled

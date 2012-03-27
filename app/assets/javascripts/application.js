@@ -18,3 +18,4 @@
 //= require jquery.timeago
 //= require knockout-2.0.0
 //= require sammy
+//= require application_ns
