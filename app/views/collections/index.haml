@@ -1,13 +1,16 @@
 - content_for :head do
-  = javascript_include_tag 'view_models/collections'
+  = javascript_include_tag 'collections'
 
-  :javascript
-    $(function() {
-      var collections = new rm.Collections([ { name: 'Clinic', }, { name: 'Gas Station' } ]);
-      ko.applyBindings(collections);
-    });
-
-%h3 Collections
-
-%ul{ ko(foreach: :collections) }
-  %li{ ko(text: :name) }
+%h2 Collection List
+%table
+  %thead
+    %tr
+      %th Collection Name
+      %th Latitude
+      %th Logitude
+      %th
+  %tbody{"data-bind" => "foreach: collections"}
+    %tr
+      %td{"data-bind" => "text: name"}
+      %td{"data-bind" => "text: lat"}
+      %td{"data-bind" => "text: lng"}
