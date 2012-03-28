@@ -1,4 +1,5 @@
 - content_for :head do
+  = javascript_include_tag 'models/collection'
   = javascript_include_tag 'view_models/collections_view_model'
   = javascript_include_tag 'maps/collections_map'
 
@@ -8,14 +9,10 @@
 %h3 Collections
 
 %table
-  %thead
-    %tr
-      %th Collection Name
-      %th Latitude
-      %th Logitude
-      %th
   %tbody{ ko(foreach: :collections) }
     %tr
+      %td
+        %input{ type: :checkbox }
       %td{ ko(text: :name) }
-      %td{ ko(text: :lat) }
-      %td{ ko(text: :lng) }
+      %td
+        %button{ ko(click: :showMe) }show

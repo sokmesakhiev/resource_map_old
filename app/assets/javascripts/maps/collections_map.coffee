@@ -7,5 +7,6 @@ $ ->
   rm.EventDispatcher.bind rm.SystemEvent.INITIALIZE, (event) ->
     ko.applyBindings rm.collectionsViewModel
 
-    $.getJSON '/collections.json', (collections) ->
+    $.getJSON '/collections.json', (data) ->
+      collections = $.map data, (collection) -> new rm.Collection collection
       rm.collectionsViewModel.collections collections
