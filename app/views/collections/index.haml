@@ -1,13 +1,21 @@
 - content_for :head do
-  = javascript_include_tag 'view_models/collections'
+  = javascript_include_tag 'view_models/collections_view_model'
+  = javascript_include_tag 'maps/collections_map'
 
   :javascript
-    $(function() {
-      var collections = new rm.Collections([ { name: 'Clinic', }, { name: 'Gas Station' } ]);
-      ko.applyBindings(collections);
-    });
+    $(function() { rm.bootstrap(); });
 
 %h3 Collections
 
-%ul{ ko(foreach: :collections) }
-  %li{ ko(text: :name) }
+%table
+  %thead
+    %tr
+      %th Collection Name
+      %th Latitude
+      %th Logitude
+      %th
+  %tbody{ ko(foreach: :collections) }
+    %tr
+      %td{ ko(text: :name) }
+      %td{ ko(text: :lat) }
+      %td{ ko(text: :lng) }
