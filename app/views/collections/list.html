@@ -1,0 +1,13 @@
+<%=javascript_include_tag 'view_models/collectionss.js'%>
+<%=javascript_include_tag 'models/collection.js'%>
+<h3>Collections</h3>
+
+<table>
+  <tbody data-bind="foreach: collections">
+    <tr>
+      <td><input type="checkbox"/></td>
+      <td data-bind="text: name"></td>
+      <td><button data-bind="click: showMe">show</button></td>
+    </tr>
+  </tbody>
+</table>

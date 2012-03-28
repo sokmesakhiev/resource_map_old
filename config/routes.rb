@@ -13,6 +13,9 @@ ResourceMap::Application.routes.draw do
         post 'set_layer_access'
       end
     end
+    collection do 
+      get 'list'
+    end
     get 'members'
     get 'thresholds'
     get 'reminders'
