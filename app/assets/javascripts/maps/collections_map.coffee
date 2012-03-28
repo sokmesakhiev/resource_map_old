@@ -8,4 +8,4 @@ $ ->
     ko.applyBindings rm.collectionsViewModel
 
     $.getJSON '/collections.json', (collections) ->
-      rm.collectionsViewModel.collections.push collection for collection in collections
+      rm.collectionsViewModel.collections collections
