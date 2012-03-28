@@ -9,7 +9,6 @@ gem "instedd-rails", '0.0.15'
 gem "breadcrumbs_on_rails"
 gem "tire"
 gem "valium"
-gem "therubyracer"
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -18,7 +17,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer'
+  gem 'therubyracer'
 
   gem 'uglifier', '>= 1.0.3'
 end

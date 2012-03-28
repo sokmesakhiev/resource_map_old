@@ -1,7 +1,12 @@
 - content_for :head do
-  = javascript_include_tag 'collections'
+  = javascript_include_tag 'view_models/collections_view_model'
+  = javascript_include_tag 'maps/collections_map'
 
-%h2 Collection List
+  :javascript
+    $(function() { rm.bootstrap(); });
+
+%h3 Collections
+
 %table
   %thead
     %tr
@@ -9,8 +14,8 @@
       %th Latitude
       %th Logitude
       %th
-  %tbody{"data-bind" => "foreach: collections"}
+  %tbody{ ko(foreach: :collections) }
     %tr
-      %td{"data-bind" => "text: name"}
-      %td{"data-bind" => "text: lat"}
-      %td{"data-bind" => "text: lng"}
+      %td{ ko(text: :name) }
+      %td{ ko(text: :lat) }
+      %td{ ko(text: :lng) }
