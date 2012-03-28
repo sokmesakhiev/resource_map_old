@@ -11,3 +11,4 @@ public/assets
 .bundle
 spec/reports
 *.swp
+elasticsearch-0.18.7
