@@ -1,1 +1,13 @@
-<p>Collection name: <strong data-bind="text: name"></strong></p>
+- content_for :head do
+  = javascript_include_tag 'view_models/collections'
+
+  :javascript
+    $(function() {
+      var collections = new rm.Collections([ { name: 'Clinic', }, { name: 'Gas Station' } ]);
+      ko.applyBindings(collections);
+    });
+
+%h3 Collections
+
+%ul{ ko(foreach: :collections) }
+  %li{ ko(text: :name) }

@@ -31,6 +31,9 @@ group :test, :development do
   gem 'machinist', '1.0.6'
   gem 'capistrano'
   gem 'rvm'
+  gem 'jasmine'
+  gem 'guard'
+  gem 'guard-coffeescript'
 end
 
 group :test do
