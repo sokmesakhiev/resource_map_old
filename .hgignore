@@ -11,6 +11,4 @@ syntax: glob
 tmp/*
 public/assets
 spec/reports
-public/javascripts/compiled
-elasticsearch-0.18.7
-spec/javascripts/compiled
+.jhw-cache
