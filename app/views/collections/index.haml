@@ -1,18 +1,16 @@
 - content_for :head do
+  = google_maps_javascript_include_tag
   = javascript_include_tag 'models/collection'
   = javascript_include_tag 'view_models/collections_view_model'
   = javascript_include_tag 'maps/collections_map'
-
+  = javascript_include_tag 'collections'
   :javascript
-    $(function() { rm.bootstrap(); });
+    $(function() { 
+      rm.bootstrap(); 
+      initCollections(); 
+    });
+%h1 Collections
 
-%h3 Collections
+#collections-dummy{style: 'height:600px'}
+#collections-main.box.nopadd.h50{style: 'display:none'}
 
-%table
-  %tbody{ ko(foreach: :collections) }
-    %tr
-      %td
-        %input{ type: :checkbox }
-      %td{ ko(text: :name) }
-      %td
-        %button{ ko(click: :showMe) }show
