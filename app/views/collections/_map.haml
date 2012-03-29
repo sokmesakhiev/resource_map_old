@@ -1,0 +1,26 @@
+.left.w33.h50
+
+  -# Collections
+  .tableheader.w33
+    My Collections
+  .tablescroll
+    %table.GralTable.CleanTable
+      %tbody
+        <!-- ko foreach: collections -->
+        %tr
+          %td
+            %div
+              %input{ type: :checkbox } 
+              %span{ko(text: :name)}
+            %button.farrow{type: :button}
+        <!-- /ko -->
+  .tablebottom{style: 'cursor: pointer'}
+    %button.cadd{type: "button"}
+    Create Collection
+#right-panel.right
+  .mapheader
+    %span 1 site on map
+    %button.icon_button.ftable.right
+    %button.icon_button.fmap.right
+    %br{clear: :all}
+  #map
