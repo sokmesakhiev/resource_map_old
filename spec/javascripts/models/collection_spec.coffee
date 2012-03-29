@@ -1,6 +1,8 @@
+#= require models/collection
+
 describe 'Collection', ->
   beforeEach ->
-    @collection = new rm.Collection { name: 'Clinic' }
+    @subject = new rm.Collection { name: 'Clinic' }
 
-  it 'should have #name', ->
-    expect(@collection.name()).toEqual 'Clinic'
+  it 'should has name', ->
+    expect(@subject.name()).toEqual 'Clinic'

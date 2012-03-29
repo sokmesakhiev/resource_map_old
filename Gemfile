@@ -31,9 +31,8 @@ group :test, :development do
   gem 'machinist', '1.0.6'
   gem 'capistrano'
   gem 'rvm'
-  gem 'jasmine-rails'
-  gem 'guard-rails-assets'
-  gem 'guard-jasmine-headless-webkit'
+  gem 'jasminerice'
+  gem 'guard-jasmine'
 end
 
 group :test do
