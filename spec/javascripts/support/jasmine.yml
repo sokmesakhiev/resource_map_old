@@ -11,7 +11,10 @@
 #   - dist/**/*.js
 #
 src_files:
-  - '**/*.js'
+  - spec/javascripts/spec_helper.coffee
+  - vendor/assets/javascripts/knockout-2.0.0.js
+  - app/assets/javascripts/module.coffee
+  - app/assets/javascripts/models/collection.coffee
 
 # stylesheets
 #
@@ -25,7 +28,7 @@ src_files:
 #   - stylesheets/*.css
 #
 stylesheets:
-  - stylesheets/**/*.css
+  - "stylesheets/**/*.css"
 
 # helpers
 #
@@ -38,7 +41,7 @@ stylesheets:
 #   - helpers/**/*.js
 #
 helpers:
-  - helpers/**/*.js
+  - "helpers/**/*.{js,coffee}"
 
 # spec_files
 #
@@ -51,7 +54,7 @@ helpers:
 #   - **/*[sS]pec.js
 #
 spec_files:
-  - '**/*_[sS]pec.js'
+  - "**/*_[sS]pec.{js,coffee}"
 
 # src_dir
 #
@@ -62,7 +65,7 @@ spec_files:
 #
 # src_dir: public
 #
-src_dir: public/javascripts/compiled
+src_dir:
 
 # spec_dir
 #
@@ -73,4 +76,4 @@ src_dir: public/javascripts/compiled
 #
 # spec_dir: spec/javascripts
 #
-spec_dir: spec/javascripts/compiled
+spec_dir: spec/javascripts

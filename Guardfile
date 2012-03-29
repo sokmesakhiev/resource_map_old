@@ -1,10 +1,13 @@
-# A sample Guardfile
-# More info at https://github.com/guard/guard#readme
-
-guard 'coffeescript', :output => 'public/javascripts/compiled' do
-  watch(/^app\/assets\/javascripts\/(.*).coffee/)
+guard 'rails-assets' do
+  watch(%r{^.*/assets/.+$})
+  watch('config/application.rb')
 end
 
-guard 'coffeescript', :output => 'spec/javascripts/compiled' do
-  watch(/^spec\/javascripts\/(.*).coffee/)
+spec_location = "spec/javascripts/%s_spec"
+
+guard 'jasmine-headless-webkit' do
+  watch(%r{^app/views/.*\.jst$})
+  watch(%r{^public/javascripts/(.*)\.js$}) { |m| newest_js_file(spec_location % m[1]) }
+  watch(%r{^.*/assets/javascripts/(.*)\.(js|coffee)$}) { |m| newest_js_file(spec_location % m[1]) }
+  watch(%r{^spec/javascripts/(.*)_spec\..*}) { |m| newest_js_file(spec_location % m[1]) }
 end
