@@ -1,6 +1,13 @@
 $ ->
-  window.GoogleMapsApi = class GoogleMapsApi
-    constructor: (mapOptions) ->
-      @map = new google.maps.Map @canvas, mapOptions
+  module 'rm'
 
-    canvas: $('#map').get 0
+  rm.GoogleMapsApi = class GoogleMapsApi
+
+    ###
+      ID: Map container html element id 
+    ###
+    @ID = 'map'
+
+    constructor: (mapOptions) ->
+      canvas = document.getElementById GoogleMapsApi.ID
+      @map = new google.maps.Map canvas, mapOptions
