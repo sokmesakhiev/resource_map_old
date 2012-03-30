@@ -1,6 +1,4 @@
 .left.w33.h50
-
-  -# Collections
   .tableheader.w33
     My Collections
   .tablescroll
@@ -11,12 +9,12 @@
           %td
             %div
               %input{ type: :checkbox } 
-              %span{ko(text: :name)}
-            %button.farrow{type: :button}
+              %span{ ko(text: :name) }
+            %button.farrow{ type: :button }
         <!-- /ko -->
-  .tablebottom{style: 'cursor: pointer'}
-    %button.cadd{type: "button"}
-    Create Collection
+  .tablebottom{ style: 'cursor: pointer' }
+    %button.cadd{ ko(click: :createCollection), type: 'button'}
+      Create Collection
 #right-panel.right
   .mapheader
     %span 1 site on map
