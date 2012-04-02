@@ -1,0 +1,24 @@
+.tableheader.expanded
+  %span My Collections
+  .mapheader.w60.right
+    %button.icon_button.ftable.right{ ko(css: '{ active: !showingMap() }') }
+    %button.icon_button.fmap.right{ ko(click: :showMap, css: '{ active: showingMap() }') }
+    %br{clear: "all"}
+.tablescroll
+  %table.GralTable
+    %thead
+      %tr
+        %th.w32{style: 'min-width:318px;max-width:318px;overflow:auto'} Collection
+        %th{style: 'width:100%'} Last update
+        %th
+    %tbody
+      <!-- ko foreach: collections -->
+      %tr
+        %td{ko(text: :name)}
+        %td.l.timeago
+        %td.l
+          %button.farrow{type: :button}
+      <!-- /ko -->
+.tablebottom{ ko(click: 'createCollection'), style: 'cursor: pointer'}
+  %button.cadd{type: 'button'}
+  Create Collection

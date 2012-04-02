@@ -18,7 +18,7 @@
 #right-panel.right
   .mapheader
     %span 1 site on map
-    %button.icon_button.ftable.right{ ko(css: { active: '!showingMap()' }) }
+    %button.icon_button.ftable.right{ ko(click: :showTable, css: { active: '!showingMap()' }) }
     %button.icon_button.fmap.right{ ko(css: { active: 'showingMap()' }) }
     %br{clear: :all}
   #map

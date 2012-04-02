@@ -13,3 +13,8 @@ $ ->
     createCollection: ->
       rm.Utils.redirect CollectionsViewModel.Urls.NEW
 
+    showTable: ->
+      @showingMap false
+
+    showMap: ->
+      @showingMap true
