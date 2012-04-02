@@ -3,11 +3,13 @@ $ ->
 
   rm.CollectionsViewModel = class CollectionsViewModel
 
-    @URLS =
-      new: '/collections/new'
+    @Urls =
+      NEW   : '/collections/new'
 
     constructor: () ->
       @collections = ko.observableArray()
+      @showingMap = ko.observable true
 
     createCollection: ->
-      rm.Utils.redirect CollectionsViewModel.URLS.new
+      rm.Utils.redirect CollectionsViewModel.Urls.NEW
+
