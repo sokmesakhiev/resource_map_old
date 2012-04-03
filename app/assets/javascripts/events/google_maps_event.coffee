@@ -2,8 +2,9 @@ $ ->
   module 'rm'
 
   rm.GoogleMapsEvent = class GoogleMapsEvent
-    constructor: (mapOptions) ->
-      @mapOptions = mapOptions
+    constructor: (lat, lng) ->
+      @lat = lat
+      @lng = lng
 
   ### 
     GoogleMapsEvent Types 

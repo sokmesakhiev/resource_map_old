@@ -10,10 +10,6 @@ $ ->
     $.getJSON '/collections.json', (data) ->
       collections = $.map data, (collection) -> new rm.Collection collection
       rm.collectionsViewModel.collections collections
+      rm.collectionsViewModel.showMap()
 
-      # load map
-      mapOptions =
-        center: new google.maps.LatLng(10, 90)
-        zoom: 4
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-      rm.EventDispatcher.trigger rm.GoogleMapsEvent.LOAD, new rm.GoogleMapsEvent mapOptions
+    $(window).resize rm.collectionsViewModel.helper.adjustContainerSize

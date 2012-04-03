@@ -2,14 +2,13 @@
   = google_maps_javascript_include_tag
   = javascript_include_tag 'google_maps_api'
 
-  = javascript_include_tag 'models/collection'
   = javascript_include_tag 'view_models/collections_view_model'
-  = javascript_include_tag 'events/google_maps_event', 'maps/google_maps_map'
+  = javascript_include_tag 'maps/google_maps_map'
   = javascript_include_tag 'maps/collections_map'
-  = javascript_include_tag 'adjust_container_size'
 
   :javascript
     $(function() { rm.bootstrap(); });
+
 %h1 Collections
 
 #collections-main.box.nopadd.h50

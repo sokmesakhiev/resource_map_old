@@ -22,4 +22,5 @@
 //= require event_dispatcher
 //= require bootstrap
 //= require events/system_event
+//= require events/google_maps_event
 //= require utils

@@ -2,6 +2,7 @@
 
 describe 'CollectionsViewModel', ->
   beforeEach ->
+    spyOn rm.CollectionsViewHelper, 'adjustContainerSize'
     @subject = new rm.CollectionsViewModel
 
   it 'should be in map mode', ->
@@ -21,7 +22,13 @@ describe 'CollectionsViewModel', ->
 
   describe '.showMap', ->
     beforeEach ->
+      spyOn rm.EventDispatcher, 'trigger'
+      @subject.collections [new rm.Collection({ name: 'Clinic', lat: 10, lng: 90 })]
       @subject.showMap()
 
     it 'should be in map mode', ->
       expect(@subject.showingMap()).toBeTruthy()
+
+    it 'should dispatch google_maps_load event', ->
+      event = new rm.GoogleMapsEvent 10, 90
+      expect(rm.EventDispatcher.trigger).toHaveBeenCalledWith 'GoogleMapsEvent:LOAD', event
