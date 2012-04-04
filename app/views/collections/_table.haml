@@ -15,7 +15,7 @@
       <!-- ko foreach: collections -->
       %tr
         %td{ko(text: :name)}
-        %td.l.timeago
+          %td.l.timeago{ ko(attr: { title: :updatedAt }, text: :updatedAtTimeago) }
         %td.l
           %button.farrow{type: :button}
       <!-- /ko -->

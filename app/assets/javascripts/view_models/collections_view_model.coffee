@@ -19,6 +19,7 @@ $ ->
 
     showTable: ->
       @_showingMap false
+      @helper.refreshTimeago()
 
     showMap: ->
       @_showingMap true
