@@ -19,3 +19,7 @@ $ ->
 
     refreshTimeago: ->
       $('.timeago').timeago()
+
+    makeFixedHeaderTable: ->
+      unless $('table.GralTable').hasClass("fht-table")
+        $('table.GralTable').fixedHeaderTable footer: false, cloneHeadToFoot: false, themeClass: 'GralTable'

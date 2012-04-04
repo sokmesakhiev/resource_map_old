@@ -20,6 +20,7 @@ $ ->
     showTable: ->
       @_showingMap false
       @helper.refreshTimeago()
+      @helper.makeFixedHeaderTable()
 
     showMap: ->
       @_showingMap true
