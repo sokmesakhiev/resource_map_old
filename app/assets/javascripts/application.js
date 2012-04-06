@@ -23,5 +23,4 @@
 //= require bootstrap
 //= require events/system_event
 //= require events/google_maps_event
-//= require events/sites_event
 //= require utils

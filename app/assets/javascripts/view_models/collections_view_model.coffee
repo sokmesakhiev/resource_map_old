@@ -1,6 +1,5 @@
 #= require helpers/collections_view_helper
 #= require models/collection
-#= require models/site
 
 $ ->
   module 'rm'
