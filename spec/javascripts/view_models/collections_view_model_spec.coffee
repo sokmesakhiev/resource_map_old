@@ -30,5 +30,5 @@ describe 'CollectionsViewModel', ->
       expect(@subject.showingMap()).toBeTruthy()
 
     it 'should dispatch google_maps_load event', ->
-      event = new rm.GoogleMapsEvent 10, 90
+      event = new rm.GoogleMapsEvent { lat: 10, lng: 90 }
       expect(rm.EventDispatcher.trigger).toHaveBeenCalledWith 'GoogleMapsEvent:LOAD', event

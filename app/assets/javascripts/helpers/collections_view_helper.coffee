@@ -16,3 +16,10 @@ $ ->
       $('.tableheader.expanded').get(0).style.width = "#{containerWidth}px" if ($('.tableheader.expanded').length > 0)
       $('#map').get(0).style.width = "#{containerWidth - 350}px" if $('#map').length > 0
       false
+
+    refreshTimeago: ->
+      $('.timeago').timeago()
+
+    makeFixedHeaderTable: ->
+      unless $('table.GralTable').hasClass("fht-table")
+        $('table.GralTable').fixedHeaderTable footer: false, cloneHeadToFoot: false, themeClass: 'GralTable'
