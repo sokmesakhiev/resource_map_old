@@ -1,4 +1,4 @@
-#= require models/cluster
+#= require cluster_marker
 
 $ ->
   module 'rm'
@@ -38,6 +38,14 @@ $ ->
         position: new google.maps.LatLng lat, lng
 
       new google.maps.Marker mapOptions
+
+    createCluster: (cluster) ->
+      clusterOptions =
+        map: @map
+        position: new google.maps.LatLng cluster.lat, cluster.lng
+        count: cluster.count
+
+      new rm.ClusterMarker clusterOptions
 
     _onBoundsChanged: ->
       listener = google.maps.event.addListener @map, 'bounds_changed', =>
@@ -81,4 +89,4 @@ $ ->
 
     _populateClusters: (clusters) ->
       for c in clusters ? []
-        @clusters[c.id] = new rm.Cluster @map, c
+        @clusters[c.id] = @createCluster c
