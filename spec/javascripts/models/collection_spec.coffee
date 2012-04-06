@@ -13,6 +13,9 @@ describe 'Collection', ->
   it 'should has lng', ->
     expect(@subject.lng()).toEqual 90
 
+  it 'should be checked', ->
+    expect(@subject.checked()).toBeTruthy()
+
   describe 'without coordinate', ->
     beforeEach ->
       @subject = new rm.Collection

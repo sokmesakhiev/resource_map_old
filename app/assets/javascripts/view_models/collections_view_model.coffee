@@ -1,5 +1,6 @@
 #= require helpers/collections_view_helper
 #= require models/collection
+#= require models/site
 
 $ ->
   module 'rm'
@@ -13,6 +14,7 @@ $ ->
       @helper = rm.CollectionsViewHelper
       @collections = ko.observableArray()
       @showingMap = ko.observable true
+      @sites = ko.observableArray()
 
     createCollection: ->
       rm.Utils.redirect CollectionsViewModel.Urls.NEW
@@ -31,5 +33,5 @@ $ ->
       @helper.adjustContainerSize()
 
     _dispatchGoogleMapsLoad: ->
-      event = new rm.GoogleMapsEvent @collections()[0]?.lat(), @collections()[0]?.lng()
+      event = new rm.GoogleMapsEvent { lat: @collections()[0]?.lat(), lng: @collections()[0]?.lng() }
       rm.EventDispatcher.trigger rm.GoogleMapsEvent.LOAD, event

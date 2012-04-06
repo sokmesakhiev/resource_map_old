@@ -2,11 +2,10 @@ $ ->
   module 'rm'
 
   rm.GoogleMapsEvent = class GoogleMapsEvent
-    constructor: (lat, lng) ->
-      @lat = lat
-      @lng = lng
+    constructor: (@data) ->
 
   ### 
     GoogleMapsEvent Types 
   ###
   rm.GoogleMapsEvent.LOAD = 'GoogleMapsEvent:LOAD'
+  rm.GoogleMapsEvent.BOUNDS_CHANGED = 'GoogleMapsEvent:BOUNDS_CHANGED'
