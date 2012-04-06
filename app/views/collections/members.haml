@@ -6,8 +6,9 @@
 
   :javascript
     $(function() { 
+      rm.membersViewModel = new rm.MembersViewModel(#{current_user.id}, #{collection.id}, #{collection_admin?}, #{collection.layers.map{|x| {id: x.id, name: x.name}}.to_json});
       rm.bootstrap(); 
-      rm.membersViewModel.initialize(#{current_user.id}, #{collection.id}, #{collection_admin?}, #{collection.layers.map{|x| {id: x.id, name: x.name}}.to_json});
+
     });
 .tabsline
   .hidden-until-loaded
